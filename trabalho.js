@@ -3,7 +3,10 @@ function geradorDeTagsDeIdentificacao(nomePet) {
 }
 
 function verificarSePodeSerAdotado(idadePet, portePet) {
-    return idadePet === 1 && portePet === 'M' ? true : false;
+    if (idadePet >= 1)
+        return portePet === 'M' ? true : false;
+    else
+        return false;
 }
 
 function calcularConsumoDeRacao(nomePet, idadePet, pesoPet) {
