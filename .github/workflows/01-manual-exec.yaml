@@ -1,4 +1,4 @@
-name: 'Execução manual'
+name: 'Job do projeto final PGATS-PAT'
 
 on:
   workflow_dispatch:
