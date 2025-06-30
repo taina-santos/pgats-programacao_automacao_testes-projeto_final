@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Baixando o node
+        uses: actions/setup-node@v4
         with:
           node-version: 22.x
       
@@ -29,4 +31,4 @@ jobs:
 
     steps:
       - name: Simulando o deploy após a execução
-        uses: echo "Deploy com sucesso"
+        run: echo "Deploy com sucesso"
