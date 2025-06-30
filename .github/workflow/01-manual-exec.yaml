@@ -1,0 +1,34 @@
+name: 'Execução do job do projeto final de PGATS-PAT'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Baixando o node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      
+      - name: Instalando dependências
+        uses: npm install
+      
+      - name: Instalando o mocha
+        uses: npm install -D mocha
+      
+      - name: Rodando os testes
+        uses: npx mocha .\teste\trabalho-final.js
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [unit]
+
+    steps:
+      - name: Simulando o deploy após a execução
+        uses: echo "Deploy com sucesso"
