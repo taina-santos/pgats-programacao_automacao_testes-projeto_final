@@ -17,13 +17,13 @@ jobs:
           node-version: 22.x
       
       - name: Instalando dependências
-        uses: npm install
+        run: npm install
       
       - name: Instalando o mocha
-        uses: npm install -D mocha
+        run: npm install -D mocha
       
       - name: Rodando os testes
-        uses: npx mocha .\teste\trabalho-final.js
+        run: npx mocha .\teste\trabalho-final.js
   
   deploy:
     runs-on: ubuntu-latest
